@@ -1,0 +1,498 @@
+* {
+  transition: all 0.4s ease-in-out;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: sans-serif;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, p, span {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+nav {
+  box-shadow: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+button {
+  outline: none;
+}
+
+.pages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #EBEAF3;
+}
+
+.equal {
+  width: 50%;
+}
+
+.cent {
+  width: 100%;
+}
+
+.show_background {
+  width: 60%;
+  background: url("images/background.png") no-repeat center;
+  background-size: cover;
+}
+
+#form {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  flex-direction: column;
+}
+#form #errorHandler {
+  display: flex;
+  position: absolute;
+  top: 8%;
+  background-color: #EBEAF3;
+  width: 45%;
+  padding: 15px;
+  justify-content: space-evenly;
+  opacity: 0;
+  border-radius: 20px 0 20px 20px;
+}
+#form #errorHandler .errorIcon {
+  display: flex;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+  color: #f7c1c5;
+  font-size: 2em;
+}
+#form #errorHandler .errorText {
+  width: 80%;
+  font-size: 1em;
+  color: #0E0C0D;
+}
+#form #logo_container {
+  display: inline-block;
+  width: 100%;
+}
+#form #logo_container img {
+  display: block;
+  margin: 0 auto 25px;
+  width: 25%;
+}
+#form span {
+  width: 45%;
+  height: 1px;
+  border-bottom: 1px solid #EBEAF3;
+}
+#form form {
+  display: flex;
+  width: 45%;
+  padding: 20px 20px;
+  flex-direction: column;
+}
+#form form label {
+  display: flex;
+  flex-direction: row;
+  font-family: "Roboto Condensed", arial;
+  font-size: 1em;
+}
+#form form input {
+  font-family: "Roboto", arial;
+  outline: none;
+  font-size: 1.3em;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px 0px 10px 10px;
+  border: 1px solid #EBEAF3;
+  background-color: #fefdfe;
+}
+#form form input:focus {
+  background-color: rgba(245, 206, 114, 0.1);
+}
+#form form button {
+  display: block;
+  width: 100%;
+  margin: 15px auto 0;
+  padding: 15px 0px;
+  border: none;
+  background: #f2be42;
+  border-radius: 10px 0 10px 10px;
+  font-size: 1em;
+  font-family: "Roboto", arial;
+  color: #fff;
+  cursor: pointer;
+}
+#form form button:hover {
+  background: #f5ce72;
+}
+#form form button:disabled {
+  cursor: not-allowed;
+  background-color: #EBEAF3;
+  color: #0E0C0D;
+}
+#form form button:disabled:hover {
+  background-color: #EBEAF3;
+}
+#form #redirect_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#form #redirect_content #content {
+  display: flex;
+  width: 45%;
+}
+#form #redirect_content #content .redirect {
+  display: inline-block;
+  width: 100%;
+}
+#form #redirect_content #content .redirect a {
+  display: block;
+  color: #778cfc;
+  font-size: 1em;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 10px 0 10px 10px;
+  padding: 15px 0;
+}
+#form #redirect_content #content .redirect a:hover {
+  background-color: #fafafc;
+  color: #0E0C0D;
+}
+
+.sideMenuContainer {
+  display: flex;
+  width: 15%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.sideMenuContainer .logoContainer {
+  display: inline-block;
+  width: 60%;
+  margin-top: 10%;
+}
+.sideMenuContainer .logoContainer img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.sideMenuContainer .userContainer {
+  display: block;
+  width: 100%;
+  margin-top: 40%;
+}
+.sideMenuContainer .userContainer .hexagon {
+  width: 30%;
+  overflow: hidden;
+  visibility: hidden;
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg);
+  margin: 0 auto -20px;
+  background-color: black;
+}
+.sideMenuContainer .userContainer .hexagon .hexagon-in {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+.sideMenuContainer .userContainer .hexagon .hexagon-in .hexagon-avatar {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  visibility: visible;
+  overflow: hidden;
+  background-size: cover;
+  background-origin: padding-box;
+  background-position: bottom -35px left 50%;
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+.sideMenuContainer .userContainer .linkContainer {
+  display: flex;
+  width: 100%;
+}
+.sideMenuContainer .userContainer .linkContainer a {
+  font-size: 1.2em;
+  font-family: "Roboto Condensed", arial;
+  font-weight: 600;
+  color: #0E0C0D;
+  text-align: center;
+  width: 100%;
+}
+.sideMenuContainer .userContainer .linkContainer a:hover {
+  color: #c1c6eb;
+}
+.sideMenuContainer .userContainer .linkContainer a:hover i {
+  color: #EBEAF3;
+}
+.sideMenuContainer .userContainer .linkContainer a i {
+  color: #cccae0;
+  font-weight: 200;
+  font-size: 0.8em;
+  font-style: normal;
+}
+.sideMenuContainer .userContainer span {
+  font-size: 2em;
+  font-family: "Roboto Condensed", arial;
+  font-weight: 100;
+  color: #0E0C0D;
+  width: 100%;
+  text-align: center;
+}
+.sideMenuContainer .menuContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60%;
+  width: 60%;
+}
+.sideMenuContainer .menuContainer ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+.sideMenuContainer .menuContainer ul li {
+  display: inline-block;
+  width: 100%;
+  margin: 10% 0;
+}
+.sideMenuContainer .menuContainer ul li a {
+  width: 90%;
+  display: inline-block;
+  font-size: 1.4em;
+  font-family: "Roboto Condensed", arial;
+  padding: 10px 5px 10px 20px;
+  border-radius: 30px;
+  color: #0E0C0D;
+}
+.sideMenuContainer .menuContainer ul li a:hover {
+  background-color: #f2be42;
+  color: #fff;
+}
+.sideMenuContainer .menuContainer ul li .active {
+  background-color: #EBEAF3;
+}
+.sideMenuContainer .logoutContainer {
+  display: inline-block;
+  width: 60%;
+  margin-top: 30%;
+}
+.sideMenuContainer .logoutContainer button {
+  width: 100%;
+  padding: 10px 5px 10px 20px;
+  border: none;
+  background: transparent;
+  font-size: 1.2em;
+  font-family: "Roboto Condensed", arial;
+  text-align: left;
+  color: #EBEAF3;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.sideMenuContainer .logoutContainer button:hover {
+  color: #0E0C0D;
+  background-color: #EBEAF3;
+}
+
+.container {
+  display: flex;
+  width: 85%;
+  background-color: #EBEAF3;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.container .globalComponent {
+  display: flex;
+  margin: 2% 0 0 3%;
+  width: 94%;
+  height: 94%;
+}
+.container .globalComponent .componentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+.container .globalComponent .componentContainer .centerComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98%;
+  height: 98%;
+}
+.container .globalComponent .settingUp {
+  background-color: transparent;
+  border-radius: 0;
+}
+.container .globalComponent .settingUp .userInfoContainer {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  height: 30%;
+  border-radius: 30px;
+  align-items: center;
+}
+.container .globalComponent .settingUp .userInfoContainer .avatarContainer {
+  display: block;
+  width: 15%;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-left: 1.5%;
+}
+.container .globalComponent .settingUp .userInfoContainer .avatarContainer img {
+  width: 100%;
+}
+.container .globalComponent .settingUp .userInfoContainer .changeAvatarContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+}
+.container .globalComponent .settingUp .userInfoContainer .changeAvatarContainer select {
+  margin-bottom: 30%;
+  padding: 10px 0;
+  border-radius: 60px;
+  outline: none;
+  border: 1px solid #EBEAF3;
+}
+.container .globalComponent .settingUp .userInfoContainer .changeAvatarContainer select:hover {
+  border: 1px solid #f2be42;
+}
+.container .globalComponent .settingUp .userInfoContainer .changeAvatarContainer button {
+  display: inline;
+  padding: 10px 50px 10px 15px;
+  background-color: #EBEAF3;
+  border: none;
+  border-radius: 60px;
+  font-size: 1em;
+  color: #0E0C0D;
+  font-weight: 600;
+  cursor: pointer;
+}
+.container .globalComponent .settingUp .userInfoContainer .changeAvatarContainer button:hover {
+  background-color: #f2be42;
+  color: #fff;
+}
+.container .globalComponent .settingless {
+  background-color: #fff;
+  color: #f2be42;
+}
+.container .globalComponent .settingless .settinglessTitle {
+  width: 98%;
+  display: flex;
+  margin-top: 2%;
+  margin-left: 2%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.container .globalComponent .settingless .settinglessTitle h3 {
+  font-size: 1.8em;
+  font-family: "Roboto Condensed", arial;
+  font-weight: 400;
+}
+.container .globalComponent .settingless .settinglessTitle .setTeamContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container .globalComponent .settingless .settinglessTitle .setTeamContainer .teamContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 19%;
+  align-items: center;
+  margin: 5% 0;
+  justify-content: space-evenly;
+  background-color: transparent;
+  border-radius: 15px;
+}
+.container .globalComponent .settingless .settinglessTitle .setTeamContainer .teamContainer:hover .cover {
+  opacity: 1;
+  cursor: pointer;
+}
+.container .globalComponent .settingless .settinglessTitle .setTeamContainer .teamContainer .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 20px #EBEAF3;
+  border-radius: 15px;
+  opacity: 0;
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+}
+.container .globalComponent .settingless .settinglessTitle .setTeamContainer .teamContainer .teamLogo {
+  display: inline-block;
+  width: 90%;
+  margin-bottom: 10%;
+}
+.container .globalComponent .settingless .settinglessTitle .setTeamContainer .teamContainer .teamLogo img {
+  display: block;
+  width: 100%;
+}
+.container .globalComponent .settingless .settinglessTitle .setTeamContainer .teamContainer .teamCar {
+  display: inline-block;
+  width: 90%;
+}
+.container .globalComponent .settingless .settinglessTitle .setTeamContainer .teamContainer .teamCar img {
+  display: block;
+  width: 100%;
+}
+
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,600 @@
+// Variables //
+
+    $colw: #fff;
+    $colg: #EBEAF3;
+    $colp: #f7c1c5;
+    $colb: #0E0C0D;
+    $colo: #f2be42;
+    $colL: #778cfc;
+    $colT: #c1c6eb;
+
+// Variables //
+
+// Reset CSS //
+
+    *{
+        transition: all 0.4s ease-in-out;
+    }
+
+    html, body{
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        font-family: sans-serif;
+        background-color: $colw;
+    }
+
+    h1, h2, h3, h4, p, span{
+        margin: 0;
+        padding: 0;
+        font-family: 'roboto', sans-serif;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    a{
+        color: inherit;
+        text-decoration: none;
+        font-family: sans-serif;
+    }
+
+    nav{
+        box-shadow: none;
+    }
+
+    .App{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: $colw;
+    }
+
+    button{
+        outline: none;
+    }
+
+    .pages{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: $colg;
+    }
+
+    .equal{
+        width: 50%;
+    }
+
+    .cent{
+        width: 100%;
+    }
+
+
+
+// Reset CSS //
+
+// Login / Register //
+
+    .show_background{
+        width: 60%;
+        background: url('images/background.png') no-repeat center;
+        background-size: cover;
+    }
+
+    #form{
+        position: relative;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $colw;
+        flex-direction: column;
+
+        #errorHandler{
+            display: flex;
+            position: absolute;
+            top: 8%;
+            background-color: $colg;
+            width: 45%;
+            padding: 15px;
+            justify-content: space-evenly;
+            opacity: 0;
+            border-radius: 20px 0 20px 20px;
+
+            .errorIcon{
+                display: flex;
+                width: 20%;
+                justify-content: center;
+                align-items: center;
+                color: $colp;
+                font-size: 2em;
+            }
+
+            .errorText{
+                width: 80%;
+                font-size: 1em;
+                color: $colb;
+            }
+        }
+
+        #logo_container{
+            display: inline-block;
+            width: 100%;
+
+            img{
+                display: block;
+                margin: 0 auto 25px;
+                width: 25%;
+            }
+        }
+
+        span{
+            width: 45%;
+            height: 1px;
+            border-bottom: 1px solid $colg;
+        }
+
+        form{
+            display: flex;
+            width: 45%;
+            padding: 20px 20px;
+            flex-direction: column;
+
+            label{
+                display: flex;
+                flex-direction: row;
+                font-family: 'Roboto Condensed', arial;
+                font-size: 1em;
+            }
+
+            input{
+                font-family: 'Roboto', arial;
+                outline: none;
+                font-size: 1.3em;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 10px 0px 10px 10px;
+                border: 1px solid $colg;
+                background-color: lighten($colg, 6%);
+
+                &:focus{
+                    background-color: rgba(lighten($colo, 10%), 0.1);
+                }
+            }
+
+            button{
+                display: block;
+                width: 100%;
+                margin: 15px auto 0;
+                padding: 15px 0px;
+                border: none;
+                background: $colo;
+                border-radius: 10px 0 10px 10px;
+                font-size: 1em;
+                font-family: 'Roboto', arial;
+                color: $colw;
+                cursor: pointer;
+
+                &:hover{
+                    background: lighten($colo, 10%);
+                }
+
+                &:disabled{
+                    cursor: not-allowed;
+                    background-color: $colg;
+                    color: $colb;
+                    &:hover{
+                        background-color: $colg;
+                    }
+                }
+            }
+        }
+
+        #redirect_content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            #content{
+                display: flex;
+                width: 45%;
+
+                .redirect{
+                    display: inline-block;
+                    width: 100%;
+
+                    a{
+                        display: block;
+                        color: $colL;
+                        font-size: 1em;
+                        text-align: center;
+                        margin: 0 auto;
+                        cursor: pointer;
+                        border-radius: 10px 0 10px 10px;
+                        padding: 15px 0;
+                        
+                        &:hover{
+                            background-color: lighten($colg, 5%);
+                            color: $colb;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+// Login / Register //
+
+// Side Menu //
+
+    .sideMenuContainer{
+        display: flex;
+        width: 15%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        .logoContainer{
+            display: inline-block;
+            width: 60%;
+            margin-top: 10%;
+            
+            img{
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .userContainer{
+            display: block;
+            width: 100%;
+            margin-top: 40%;
+
+            .hexagon{
+                width: 30%;
+                overflow: hidden;
+                visibility: hidden;
+                -webkit-transform: rotate(120deg);
+                -moz-transform: rotate(120deg);
+                -ms-transform: rotate(120deg);
+                -o-transform: rotate(120deg);
+                transform: rotate(120deg);
+                margin: 0 auto -20px;
+                background-color: black;
+
+                .hexagon-in{
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-transform: rotate(-60deg);
+                    -moz-transform: rotate(-60deg);
+                    -ms-transform: rotate(-60deg);
+                    -o-transform: rotate(-60deg);
+                    transform: rotate(-60deg);
+
+                            .hexagon-avatar{
+                                width: 100%;
+                                height: 100%;
+                                background-repeat: no-repeat;
+                                visibility: visible;
+                                overflow: hidden;
+                                background-size: cover;
+                                background-origin: padding-box;
+                                background-position: bottom -35px left 50%;
+                                -webkit-transform: rotate(-60deg);
+                                -moz-transform: rotate(-60deg);
+                                -ms-transform: rotate(-60deg);
+                                -o-transform: rotate(-60deg);
+                                transform: rotate(-60deg);
+
+                            }
+                }
+            }
+
+            .linkContainer{
+                display: flex;
+                width: 100%;
+
+                a{
+                    font-size: 1.2em;
+                    font-family: 'Roboto Condensed', arial;
+                    font-weight: 600;
+                    color: $colb;
+                    text-align: center;
+                    width: 100%;
+
+                    &:hover{
+                        color: $colT;
+
+                        i{
+                            color: $colg;
+                        }
+                    }
+
+                    i{
+                        color: darken($colg, 10%);
+                        font-weight: 200;
+                        font-size: 0.8em;
+                        font-style: normal;
+
+                    }
+                }
+
+            }
+
+            span{
+                font-size: 2em;
+                font-family: 'Roboto Condensed', arial;
+                font-weight: 100;
+                color: $colb;
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+        .menuContainer{
+            display: flex;
+            flex-direction: column;
+            margin-top: 60%;
+            width: 60%;
+
+            ul{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+
+                li{
+                    display: inline-block;
+                    width: 100%;
+                    margin: 10% 0;
+
+                    a{
+                        width: 90%;
+                        display: inline-block;
+                        font-size: 1.4em;
+                        font-family: 'Roboto Condensed', arial;
+                        padding: 10px 5px 10px 20px;
+                        border-radius: 30px;
+                        color: $colb;
+
+                        &:hover{
+                            background-color: $colo;
+                            color: $colw;
+                        }
+                    }
+
+                    .active{
+                        background-color: $colg;
+                    }
+
+                }
+
+            }
+        }
+        
+        .logoutContainer{
+            display: inline-block;
+            width: 60%;
+            margin-top: 30%;
+
+            button{
+                width: 100%;
+                padding: 10px 5px 10px 20px;
+                border: none;
+                background: transparent;
+                font-size: 1.2em;
+                font-family: 'Roboto Condensed', arial;
+                text-align: left;
+                color: $colg;
+                font-weight: 800;
+                cursor: pointer;
+                border-radius: 30px;
+
+                &:hover{
+                    color: $colb;
+                    background-color: $colg;
+                }
+            }
+        }
+    }
+
+// Side Menu //
+
+// Container //
+
+    .container{
+        display: flex;
+        width: 85%;
+        background-color: $colg;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+
+        .globalComponent{
+            display: flex;
+            margin: 2% 0 0 3%;
+            width: 94%;
+            height: 94%;
+
+            .componentContainer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                border-radius: 30px;
+
+                .centerComponent{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 98%;
+                    height: 98%;
+
+                }
+            }
+
+            .settingUp{
+                background-color: transparent;
+                border-radius: 0;
+
+                .userInfoContainer{
+                    display: flex;
+                    width: 100%;
+                    background-color: $colw;
+                    height: 30%;
+                    border-radius: 30px;
+                    align-items: center;
+
+                    .avatarContainer{
+                        display: block;
+                        width: 15%;
+                        overflow: hidden;
+                        border-radius: 20px;
+                        margin-left: 1.5%;
+
+                        img{
+                            width: 100%;
+                        }
+                    }
+
+                    .changeAvatarContainer{
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 2%;
+
+                        select{
+                            margin-bottom: 30%;
+                            padding: 10px 0;
+                            border-radius: 60px;
+                            outline: none;
+                            border: 1px solid $colg;
+
+                            &:hover{
+                                border: 1px solid $colo;
+                            }
+                        }
+
+                        button{
+                            display: inline;
+                            padding: 10px 50px 10px 15px;
+                            background-color: $colg;
+                            border: none;
+                            border-radius: 60px;
+                            font-size: 1em;
+                            color: $colb;
+                            font-weight: 600;
+                            cursor: pointer;
+
+                            &:hover{
+                                background-color: $colo;
+                                color: $colw;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .settingless{
+                background-color: $colw;
+                color: $colo;
+
+                .settinglessTitle{
+                    width: 98%;
+                    display: flex;
+                    margin-top: 2%;
+                    margin-left: 2%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                                        
+                    h3{
+                        font-size: 1.8em;
+                        font-family: 'Roboto Condensed', arial;
+                        font-weight: 400;
+                    }
+
+                    .setTeamContainer{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+
+                        .teamContainer{
+                            display: flex;
+                            position: relative;
+                            flex-direction: column;
+                            width: 19%;
+                            align-items: center;
+                            margin: 5% 0;
+                            justify-content: space-evenly;
+                            background-color: transparent;
+                            border-radius: 15px;
+
+                            &:hover{
+
+                                .cover{
+                                    opacity: 1;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .cover{
+                                position: absolute;
+                                top:0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                box-shadow: 0px 0px 20px $colg;
+                                border-radius: 15px;
+                                opacity: 0;
+                                background-color: transparent;
+                                border: none;
+                                z-index: 1;
+                            }
+
+                            .teamLogo{
+                                display: inline-block;
+                                width: 90%;
+                                margin-bottom: 10%;
+
+                                img{
+                                    display: block;
+                                    width: 100%;
+                                }
+                            }
+
+                            .teamCar{
+                                display: inline-block;
+                                width: 90%;
+
+                                img{
+                                    display: block;
+                                    width: 100%;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+// Container //
